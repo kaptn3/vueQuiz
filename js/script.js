@@ -17,10 +17,14 @@ var app = new Vue({
     checkedValue: [],
     correct: [],
     incorrect: [],
-    show: 'test'
+    show: 'test',
+    button: 'Следующий вопрос'
   },
   methods: {
     next: function() { 
+      if (this.id === this.questions.length - 1) {
+        this.show = 'result';
+      }
       let countCorrect = 0;  
       for (let i = 0; i < this.checkedValue.length; i++) { 
         for (let k = 0; k < this.answers[this.id].answer.length; k++ ){  
@@ -37,12 +41,19 @@ var app = new Vue({
       this.checkedValue = [];
       if (this.id < this.questions.length) {
         this.id++;
-      } else {
-        this.show = 'result';
-      }
+      } 
+      if(this.id === (this.questions.length - 1)) {
+        this.button = 'результы';
+      }      
+
+      console.log(this.id);
     }
   }
 });
+ console.log(app.id);
+// todo
+// перемешивание вопросов (так же и ответов)
+// кнопка следующий вопрос заменяется на результы при последнем вопросе
 
 
 
