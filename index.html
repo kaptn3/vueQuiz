@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<div id="app">
+  <transition>
+    <!--div class="start" key="start">
+      <button v-on:click="show = 'test'">Начать</button>
+    </div--><!-- end start -->
+
+    <div class="test" key="test">
+      <div>
+        <div v-for="(option, index) in options">
+          <div v-if="show === index">
+            <h4>{{ questions[index].question }}</h4>
+            <div v-for="opt in option">
+              <div>
+                <div v-for="value in opt">
+                  {{ value }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button v-on:click="show++">Следующий вопрос</button>
+      <!--{{ options[0].option[0] }}-->
+    </div><!-- end test -->
+
+    <div class="result" key="result"></div><!-- end relult -->
+  </transition>
+</div><!-- end -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
