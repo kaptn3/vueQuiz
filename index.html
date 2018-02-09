@@ -30,7 +30,9 @@
         </div>
       </div>
       {{ checkedValue }}
-      <button v-on:click="show++">Следующий вопрос</button>
+      {{ correct }}
+      {{ incorrect }}
+      <button v-on:click="next">Следующий вопрос</button>
       <!--{{ options[0].option[0] }}-->
     </div><!-- end test -->
 
