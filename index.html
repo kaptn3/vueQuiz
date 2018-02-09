@@ -21,7 +21,7 @@
             <div v-for="opt in option">
               <div>
                 <div v-for="(value, index) in opt">
-                  <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="value" v-model="checkedValue" class="checkbox-none">
+                  <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="index" v-model="checkedValue" class="checkbox-none">
                   <label v-bind:for="'checkbox-' + index">{{ value }}</label>                  
                 </div>
               </div>
@@ -30,6 +30,7 @@
         </div>
       </div>
       {{ checkedValue }}
+      {{ correct }}
       <button v-on:click="next">Следующий вопрос</button>
       <!--{{ options[0].option[0] }}-->
     </div><!-- end test -->
