@@ -17,3 +17,14 @@ input:checked ~ label {
 .checkbox-none {
   display: none;
 }
+
+/* Transition */ 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
