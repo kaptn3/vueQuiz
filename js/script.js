@@ -13,7 +13,8 @@ var app = new Vue({
       { option: [ '5', '2', '4', '8' ] },
       { option: ['Жаранова', 'Иванова', 'Соколова'] }
     ],
-    show: 0
+    show: 0,
+    checkedValue: []
   }
 });
 

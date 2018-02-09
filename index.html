@@ -20,14 +20,16 @@
             <h4>{{ questions[index].question }}</h4>
             <div v-for="opt in option">
               <div>
-                <div v-for="value in opt">
-                  {{ value }}
+                <div v-for="(value, index) in opt">
+                  <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="value" v-model="checkedValue" class="checkbox-none">
+                  <label v-bind:for="'checkbox-' + index">{{ value }}</label>                  
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {{ checkedValue }}
       <button v-on:click="show++">Следующий вопрос</button>
       <!--{{ options[0].option[0] }}-->
     </div><!-- end test -->

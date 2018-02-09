@@ -1,0 +1,18 @@
+label {
+  display: inline-block;
+  padding: 5px;
+  width: 100px;
+  text-align: center;
+  border: 1px solid #000;
+  cursor: pointer;
+  background-color: #fff;
+  transition: .3s background-color ease;
+}
+
+label:hover {
+  background-color: #eee;
+}
+
+.checkbox-none {
+  display: none;
+}
