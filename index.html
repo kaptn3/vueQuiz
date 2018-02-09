@@ -13,10 +13,10 @@
       <button v-on:click="show = 'test'">Начать</button>
     </div--><!-- end start -->
 
-    <div class="test" key="test">
+    <div v-if="show === 'test'" class="test" key="test">
       <div>
         <div v-for="(option, index) in options">
-          <div v-if="show === index">
+          <div v-if="id === index">
             <h4>{{ questions[index].question }}</h4>
             <div v-for="opt in option">
               <div>
@@ -30,13 +30,14 @@
         </div>
       </div>
       {{ checkedValue }}
-      {{ correct }}
-      {{ incorrect }}
       <button v-on:click="next">Следующий вопрос</button>
       <!--{{ options[0].option[0] }}-->
     </div><!-- end test -->
 
-    <div class="result" key="result"></div><!-- end relult -->
+    <div v-if="show === 'result'" class="result" key="result">
+      <h2>Итог</h2>
+      <p>У вас {{ correct.length }} правильных и {{ incorrect.length }} неправильных ответов</p>
+    </div><!-- end relult -->
   </transition>
 </div><!-- end -->
 
