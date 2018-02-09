@@ -17,7 +17,7 @@ var app = new Vue({
     checkedValue: [],
     correct: [],
     incorrect: [],
-    show: 'test',
+    show: 'start',
     button: 'Следующий вопрос'
   },
   methods: {

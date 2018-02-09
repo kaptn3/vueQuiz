@@ -9,25 +9,25 @@
 
 <div id="app">
   <transition name="fade" mode="out-in">
-    <!--div class="start" key="start">
-      <button v-on:click="show = 'test'">Начать</button>
-    </div--><!-- end start -->
+    <div v-if="show === 'start'" class="start" key="start">
+      <button v-on:click="show = 'test'">Начать тест</button>
+    </div><!-- end start -->
 
     <div v-if="show === 'test'" class="test" key="test">
       <div>
         <div v-for="(option, index) in options">
           <transition name="fade" mode="out-in">
-          <div v-if="id === index" key="index">
-            <h4>{{ questions[index].question }}</h4>
-            <div v-for="opt in option">
-              <div>
-                <div v-for="(value, index) in opt">
-                  <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="index" v-model="checkedValue" class="checkbox-none">
-                  <label v-bind:for="'checkbox-' + index">{{ value }}</label>                  
+            <div v-if="id === index" key="index">
+              <h4>{{ questions[index].question }}</h4>
+              <div v-for="opt in option">
+                <div>
+                  <div v-for="(value, index) in opt">
+                    <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="index" v-model="checkedValue" class="checkbox-none">
+                    <label v-bind:for="'checkbox-' + index">{{ value }}</label>                  
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
           </transition>
         </div>
       </div>
