@@ -18,9 +18,12 @@ var app = new Vue({
     correct: [],
     incorrect: [],
     show: 'start',
-    button: 'Следующий вопрос'
+    button: 'Следующий'
   },
   methods: {
+    start: function() {    
+      this.show = 'test';
+    },
     next: function() { 
       if (this.id === this.questions.length - 1) {
         this.show = 'result';
@@ -40,21 +43,20 @@ var app = new Vue({
       }
       this.checkedValue = [];
       if (this.id < this.questions.length) {
-        this.id++;
+        setTimeout(function() {app.id++}, 100);
       } 
-      if(this.id === (this.questions.length - 1)) {
-        this.button = 'результы';
+      if(this.id === (this.questions.length - 2)) {
+        this.button = 'Результаты';
       }      
-
-      console.log(this.id);
     }
   }
 });
- console.log(app.id);
+
 // todo
 // перемешивание вопросов (так же и ответов)
-// кнопка следующий вопрос заменяется на результы при последнем вопросе
-
+// после результатов просмотр ответов
+// добавить ссылку на гитхаб на уголке
+// добавить стили через vue
 
 
 

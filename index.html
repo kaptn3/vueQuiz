@@ -14,25 +14,21 @@
     </div><!-- end start -->
 
     <div v-if="show === 'test'" class="test" key="test">
-      <div>
-        <div v-for="(option, index) in options">
-          <transition name="fade" mode="out-in">
-            <div v-if="id === index" key="index">
-              <h4>{{ questions[index].question }}</h4>
-              <div v-for="opt in option">
-                <div>
-                  <div v-for="(value, index) in opt">
-                    <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="index" v-model="checkedValue" class="checkbox-none">
-                    <label v-bind:for="'checkbox-' + index">{{ value }}</label>                  
-                  </div>
-                </div>
-              </div>
+      <div v-for="(option, index) in options">
+        <transition name="fade" mode="out-in">
+        <div v-if="id === index" key="index" class="question">
+          <h4>{{ questions[index].question }}</h4>
+          <div v-for="opt in option">
+            <div v-for="(value, index) in opt">
+              <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="index" v-model="checkedValue" class="checkbox-none">
+              <label v-bind:for="'checkbox-' + index">{{ value }}</label>    
             </div>
-          </transition>
+          </div>
+          <button class="btn-next" v-on:click="next">{{ button }}</button>
+          <div class="progress"><div v-bind:style="{ width: (((id + 1) / options.length) * 100) + '%' }" > {{ (((id + 1) / options.length) * 100) }}%</div></div>
         </div>
+      </transition>
       </div>
-      <button v-on:click="next">{{ button }}</button>
-      <!--{{ options[0].option[0] }}-->
     </div><!-- end test -->
 
     <div v-if="show === 'result'" class="result" key="result">
