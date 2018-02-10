@@ -21,8 +21,12 @@ var app = new Vue({
     button: 'Следующий'
   },
   methods: {
-    start: function() {    
-      this.show = 'test';
+    start: function() {   
+      this.id = 0;
+      this.checkedValue = [];
+      this.correct = [];
+      this.incorrect = []; 
+      this.show = 'test';      
     },
     next: function() { 
       if (this.id === this.questions.length - 1) {

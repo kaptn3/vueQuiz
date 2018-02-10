@@ -34,6 +34,7 @@
     <div v-if="show === 'result'" class="result" key="result">
       <h2>Итог</h2>
       <p>У вас {{ correct.length }} правильных и {{ incorrect.length }} неправильных ответов</p>
+      <button v-on:click="start">Пройти заново</button>
     </div><!-- end relult -->
   </transition>
 </div><!-- end -->
