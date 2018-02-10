@@ -6,7 +6,7 @@
 
 body {
   /*background: linear-gradient(45deg, #EECFBA, #C5DDE8); FF59FF*/
-  background: linear-gradient(70deg, #FFA5FF, #70CCBE);
+  background: linear-gradient(70deg, #eee39a, #ddb4cf);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -18,14 +18,13 @@ button {
   border: 0;
   outline: none;
   cursor: pointer;
-  box-shadow: 0 5px 0 #3c93d5;
-  background-color: #55acee;
+  background-color: #446975;
+  box-shadow: 0 3px 6px rgba(0,0,0,.25), 0 1px 1px rgba(0,0,0,.22);
 }
 .btn-next {
   padding: 6px 12px;
   margin-bottom: 18px;
-  background-color: #24BE73; 
-  box-shadow: 0 5px 0 #28a745;
+  /*box-shadow: 0 5px 0 #28a745;*/
 }
 
 img {
@@ -101,20 +100,29 @@ label {
   display: inline-block;
   padding: 6px 12px;
   width: 100px;
-  border: 1px solid #007bff;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #eee;
   transition: .3s all ease;
   width: 100%;
   border-radius: 5px;
   margin-bottom: 12px;
 }
 
+label.correcr {
+  background-color: #99cc66;
+  color: #fff;
+}
+
+label.wrong {
+  background-color: #cc6666;
+  color: #fff;
+}
+
 label:hover,
 input:checked ~ label {
   color: #fff;
-  background-color: #3c93d5;
-  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.5);
+  background-color: #9be7e3;
+  box-shadow: 0 0 0 0.2rem rgba(112,204,191,.1);
 }
 
 .checkbox-none {
@@ -125,11 +133,11 @@ input:checked ~ label {
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
-  background-color: #e9ecef;
+  background-color: #dadad9;
 }
 
 .progress > div {
-  background-color: #70CCBE;
+  background-color: #adadad;
   text-align: center;
   color: #fff;
 }
