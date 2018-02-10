@@ -33,15 +33,15 @@ var app = new Vue({
       if (this.id === this.questions.length - 1) {
         this.show = 'result';
       }
-      let countCorrect = 0;  
-      for (let i = 0; i < this.checkedValue.length; i++) { 
-        for (let k = 0; k < this.answers[this.id].answer.length; k++ ){  
+      let countCorrect = 0;  // 3 2 1
+      for (let i = 0; i < this.checkedValue.length; i++) { // 0 1 2
+        for (let k = 0; k < this.answers[this.id].answer.length; k++ ){ // 0 1 
           if (this.checkedValue[i] === (this.answers[this.id].answer[k] - 1)) {
             countCorrect++;
           } 
         }
       }
-      if (countCorrect === this.answers[this.id].answer.length) {
+      if ((countCorrect === this.answers[this.id].answer.length) && (this.checkedValue.length === this.answers[this.id].answer.length)) {
         this.correct.push(this.id);
       } else {
         this.incorrect.push(this.id);
