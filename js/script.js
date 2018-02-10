@@ -26,7 +26,8 @@ var app = new Vue({
       this.checkedValue = [];
       this.correct = [];
       this.incorrect = []; 
-      this.show = 'test';      
+      this.show = 'test';  
+      this.button = 'Следующий';  
     },
     next: function() { 
       if (this.id === this.questions.length - 1) {
