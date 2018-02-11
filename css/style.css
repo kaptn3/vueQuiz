@@ -142,6 +142,12 @@ input:checked ~ label {
   box-shadow: 0 0 0 0.2rem rgba(112,204,191,.1);
 }
 
+@media (max-width: 767.99px) {
+  label:hover {
+    background-color: #dadad9;
+  }
+}
+
 .checkbox-none {
   display: none;
 }
