@@ -17,7 +17,7 @@ var app = new Vue({
     checkedValue: [],
     correct: [],
     incorrect: [],
-    show: 'start',
+    show: 'none',
     button: 'Следующий'
   },
   methods: {
@@ -56,6 +56,12 @@ var app = new Vue({
     }
   }
 });
+
+window.onload = function() {
+  const load = document.querySelector('.prog');
+  load.style.display = 'none';
+  app.show = 'start'; // плавное появление
+}
 
 // todo
 // перемешивание вопросов (так же и ответов)

@@ -32,6 +32,10 @@ img {
   vertical-align: middle;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
