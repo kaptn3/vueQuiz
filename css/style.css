@@ -37,9 +37,7 @@ img {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
   margin: 0 auto;
   padding: 0 15px;
   width: 100%;
@@ -93,6 +91,7 @@ img {
 .start,
 .result,
 .question {  
+  margin-top: 16px;
   width: 50%;
   background-color: #fff;
   padding: 25px;
@@ -107,13 +106,23 @@ h4 {
 label {
   display: inline-block;
   padding: 6px 12px;
-  width: 100px;
   cursor: pointer;
-  background-color: #eee;
+  background-color: #dadad9;
   transition: .3s all ease;
   width: 100%;
   border-radius: 5px;
   margin-bottom: 12px;
+}
+
+@media (max-width: 767.99px) {
+  .start,
+  .result,
+  .question {
+    width: 90%;
+  }
+  .question {
+    right: 5%;
+  }
 }
 
 label.correct {
