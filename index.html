@@ -8,6 +8,7 @@
 <body>
 
 <div id="app">  
+  <div class="preload"><img src="load.gif"></div>
   <transition name="fade" mode="out-in">
     <div v-if="show === 'start'" class="start" key="start" v-cloak>
       <button v-on:click="show = 'test'">Начать тест</button>

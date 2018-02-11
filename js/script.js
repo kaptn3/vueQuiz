@@ -58,7 +58,7 @@ var app = new Vue({
 });
 
 window.onload = function() {
-  const load = document.querySelector('.prog');
+  const load = document.querySelector('.preload');
   load.style.display = 'none';
   app.show = 'start'; // плавное появление
 }
