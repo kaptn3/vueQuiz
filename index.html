@@ -14,22 +14,20 @@
   <div class="preload"><img src="load.svg"></div>
   <transition name="fade" mode="out-in">
     <div v-if="show === 'start'" class="start" key="start" v-cloak>
-      <button v-on:click="show = 'test'">Начать тест</button>
+      <button @click="show = 'test'">Начать тест</button>
     </div><!-- end start -->
 
     <div v-if="show === 'test'" class="test" key="test" v-cloak>
-      <div v-for="(option, index) in options">
+      <div v-for="(value, index) in newData">
         <transition name="fade" mode="out-in">
-        <div v-if="id === index" key="index" class="question">
-          <h4>{{ questions[index].question }}</h4>
-          <div v-for="opt in option">
-            <div v-for="(value, index) in opt">
-              <input type="checkbox" v-bind:id="'checkbox-' + index" v-bind:value="index" v-model="checkedValue" class="checkbox-none">
-              <label v-bind:for="'checkbox-' + index">{{ value }}</label>    
-            </div>
+          <div v-if="id === index" key="index" class="question">
+            <h4>{{ newData[index].question }}</h4>
+            <div v-for="(option, index) in value.options" class="check-input">
+              <input type="checkbox" :id="'checkbox-' + index" :value="index" v-model="checkedValue" class="checkbox-none">
+              <label :for="'checkbox-' + index">{{ option.text }}</label>
           </div>
-          <button class="btn-next" v-on:click="next">{{ button }}</button>
-          <div class="progress"><div v-bind:style="{ width: (((id + 1) / options.length) * 100) + '%' }" > {{ (((id + 1) / options.length) * 100) }}%</div></div>
+          <button class="btn-next" @click="next">{{ button }}</button>
+          <div class="progress"><div :style="{ width: (((id + 1) / options.length) * 100) + '%' }" > {{ (((id + 1) / newData.length) * 100) }}%</div></div>
         </div>
       </transition>
       </div>
@@ -38,12 +36,12 @@
     <div v-if="show === 'result'" class="result" key="result" v-cloak>
       <h2>Итог</h2>
       <p>У вас {{ correct.length }} правильных и {{ incorrect.length }} неправильных ответов</p>
-      <button v-on:click="start">Пройти заново</button>
+      <button @click="start">Пройти заново</button>
     </div><!-- end relult -->
   </transition>
 </div><!-- end -->
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://cdn.rawgit.com/vikapitoshka/vueQuiz/7f6d205d/js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

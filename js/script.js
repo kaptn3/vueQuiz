@@ -18,7 +18,33 @@ var app = new Vue({
     correct: [],
     incorrect: [],
     show: 'none',
-    button: 'Следующий'
+    button: 'Следующий',
+    newData: [
+      {
+        question: "Сколько будет 2+2?",
+        options: [
+          { text: "4", correct: true },
+          { text: "5" },
+          { text: "1" }
+        ] 
+      },
+      {
+        question: "Сколько будет 5+8?",
+        options: [
+          { text: "4" },
+          { text: "13", correct: true },
+          { text: "1" }
+        ]
+      },
+      {
+        question: "Какая фамилия у Насти?",
+        options: [
+          { text: "Жаранова", correct: true },
+          { text: "Соколова", correct: true },
+          { text: "Румянцева" }
+        ]
+      }
+    ]
   },
   methods: {
     start: function() {   
