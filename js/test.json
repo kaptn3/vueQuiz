@@ -1,0 +1,26 @@
+[
+  {
+    "text": "Сколько будет 2+2?",
+    "options": [
+      { "text": "4", "correct": true },
+      { "text": "5" },
+      { "text": "1" }
+    ] 
+  },
+  {
+    "text": "Сколько будет 5+8?",
+    "options": [
+      { "text": "4" },
+      { "text": "13", "correct": true },
+      { "text": "1" }
+    ]
+  },
+  {
+    "text": "Какая фамилия у Насти?",
+    "options": [
+      { "text": "Жаранова", "correct": true },
+      { "text": "Соколова", "correct": true },
+      { "text": "Румянцева" }
+    ]
+  }
+]
